@@ -8,7 +8,8 @@ use app\Models\Animal;
 class Breed extends Model
 {
     protected $fillable = [
-        'name'
+        'name',
+        'species_id'
     ];
     public function animal() {
         return $this->hasMany(Animal::class);
