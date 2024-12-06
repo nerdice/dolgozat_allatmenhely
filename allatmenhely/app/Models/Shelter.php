@@ -11,7 +11,8 @@ class Shelter extends Model
         'name',
         'capacity'
     ];
+    
     public function animal() {
-        return $this->belongsToMany(Animal::class);
+        return $this->hasMany(Animal::class);
     }
 }

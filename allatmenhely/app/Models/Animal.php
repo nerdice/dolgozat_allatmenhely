@@ -17,13 +17,14 @@ class Animal extends Model
         'shelter_id',
         'breed_id'
     ];
-    public function breed() {
-        return $this->belongsTo(Breed::class);
+    
+    public function user() {
+        return $this->belongsToMany(User::class);
     }
+
     public function shelter() {
-        return $this->hasOne(Shelter::class);
+        return $this->belongsTo(Shelter::class);
     }
-    public function caretaker() {
-        return $this->hasMany(User::class);
-    }
+    
+    
 }

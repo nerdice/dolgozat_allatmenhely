@@ -11,7 +11,6 @@ class Breed extends Model
         'name',
         'species_id'
     ];
-    public function animal() {
-        return $this->hasMany(Animal::class);
-    }
+    
+    
 }
