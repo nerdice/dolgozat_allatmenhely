@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('breeds', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            //$table->integer('species_id');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('breeds', function (Blueprint $table) {
+            $table->unsignedBigInteger('species_id');
+            $table->foreign('species_id')->references('id')->on('species')->onDelete('cascade');
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('breeds');
+        Schema::table('breeds', function (Blueprint $table) {
+            //
+        });
     }
 };
