@@ -25,6 +25,10 @@ class Animal extends Model
     public function shelter() {
         return $this->belongsTo(Shelter::class);
     }
+
+    public function breed() {
+        return $this->belongsTo(Breed::class);
+    }
     
     
 }
